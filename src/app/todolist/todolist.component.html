@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="text-center text-title text-uppercase">
+    Todo List
+    <br>
+  </h2>
+  <!-- <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()"> -->
+  <!-- Add new Todo -->
+  <div class="form-group row container-fluid">
+    <div class="col-sm-2">
+      <input class="form-control" [(ngModel)]="newTodo.name" type="text" placeholder="Name">
+    </div>
+    <div class="col-sm-8">
+      <input class="form-control" [(ngModel)]="newTodo.des" type="text" placeholder="Description">
+    </div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-primary" (click)="addTodo()">Add new todo</button>
+    </div>
+  </div>
+  <!-- End Add new Todo-->
+  <br>
+  <div class="content-center">
+    <table class="table table-bordered text-table ">
+      <thead class="header-table">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let todo of todo_data">
+        <td> {{todo.name}}</td>
+        <td>{{ todo.description }}</td>
+        <td>{{ todo.status }}</td>
+        <td>DELETE UPDATE</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.text-title{
+    color: #2c3e50!important;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
+
+.text-uppercase{
+    text-transform: uppercase!important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.content-center {
+    display: flex;
+    align-items: center;
+}
+
+.text-table{
+    font-size: 28px;
+}
+
+.header-table{
+    background-color: #18bc9c;
+}
