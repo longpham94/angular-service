@@ -6,7 +6,7 @@ import { Todo } from './todo';
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
-  styleUrls: ['./todolist.component.css']
+  styleUrls: ['./todolist.component.css', './todolist.component.css.less']
 })
 export class TodolistComponent implements OnInit {
 
@@ -34,6 +34,21 @@ export class TodolistComponent implements OnInit {
       console.log("After Post --- " + data);
       this.getTodo(this.tripId);
       this.newTodo = new Todo();
+    });
+  }
+
+  toggleTodo(id, status) {
+    if (status == 0) { status = 1}
+    else if (status == 1) {status = 0}
+    this.todoService.toggleTodo(id, status).subscribe(data => {
+      console.log("After Post --- " + data);
+    });
+  }
+
+  removeTodo(id) {
+    this.todoService.removeTodo(id).subscribe(data => {
+      console.log("After Post --- " + data);
+      this.getTodo(this.tripId);
     });
   }
 

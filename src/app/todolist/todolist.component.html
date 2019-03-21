@@ -24,15 +24,19 @@
         <tr>
           <th>Name</th>
           <th>Description</th>
-          <th>Status</th>
+          <th>Done</th>
           <th>Action</th>
         </tr>
       </thead>
       <tr *ngFor="let todo of todo_data">
         <td> {{todo.name}}</td>
-        <td>{{ todo.description }}</td>
-        <td>{{ todo.status }}</td>
-        <td>DELETE UPDATE</td>
+        <td>{{todo.description}}</td>
+        <td>
+          <div class="container-fluid"><input class="toggle" type="checkbox" [checked]="todo.status == 1" (click)="toggleTodo(todo.id, todo.status)"></div>
+        </td>
+        <td>
+          <div class="container-fluid"><button type="button" class="btn btn-danger" (click)="removeTodo(todo.id)">DELETE</button></div>
+        </td>
       </tr>
     </table>
   </div>

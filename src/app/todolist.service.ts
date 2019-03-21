@@ -33,4 +33,19 @@ export class TodolistService {
     };
     return this.http.post("http://127.0.0.1:3000/todo/", body, this.httpOptions);
   }
+
+  toggleTodo(id,status) {
+    var body = {
+      "id": id,
+      "status": status
+    };
+    return this.http.post("http://127.0.0.1:3000/todo/status", body, this.httpOptions);
+  }
+
+  removeTodo(id) {
+    var body = {
+      "id": id
+    };
+    return this.http.post("http://127.0.0.1:3000/todo/remove", body, this.httpOptions);
+  }
 }

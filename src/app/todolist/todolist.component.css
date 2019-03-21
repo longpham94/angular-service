@@ -25,3 +25,7 @@
 .header-table{
     background-color: #18bc9c;
 }
+
+input[type=checkbox] {
+    transform: scale(3);
+  }
