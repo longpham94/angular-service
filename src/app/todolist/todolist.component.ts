@@ -13,7 +13,7 @@ export class TodolistComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private todoService: TodolistService) { }
   newTodo: Todo = new Todo();
-  todo_data;
+  todo_data = [];
   tripId;
   ngOnInit() {
     this.getTodo(this.route.snapshot.paramMap.get('id'));
@@ -24,7 +24,7 @@ export class TodolistComponent implements OnInit {
     this.todoService.getTodo(id).subscribe(data => {
       this.tripId = id;
       if (data['status'] == '0') this.todo_data = data['todoList'];
-      else (this.todo_data = data['message']);
+      else (this.todo_data = []);
     })
   }
 

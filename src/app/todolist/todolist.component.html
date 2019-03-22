@@ -1,4 +1,5 @@
 <div class="container">
+  <br>
   <h2 class="text-center text-title text-uppercase">
     Todo List
     <br>
@@ -22,21 +23,22 @@
     <table class="table table-bordered text-table ">
       <thead class="header-table">
         <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Done</th>
-          <th>Action</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Description</th>
+          <th class="text-center">Done</th>
+          <th class="text-center">Action</th>
         </tr>
       </thead>
+          <tr *ngIf="todo_data.length == 0"><td colspan="4" class="text-center">No Todo for this Trip</td></tr>
       <tr *ngFor="let todo of todo_data">
-        <td> {{todo.name}}</td>
-        <td>{{todo.description}}</td>
-        <td>
-          <div class="container-fluid"><input class="toggle" type="checkbox" [checked]="todo.status == 1" (click)="toggleTodo(todo.id, todo.status)"></div>
-        </td>
-        <td>
-          <div class="container-fluid"><button type="button" class="btn btn-danger" (click)="removeTodo(todo.id)">DELETE</button></div>
-        </td>
+            <td>{{todo.name}}</td>
+            <td>{{todo.description}}</td>
+            <td>
+              <div class="container-fluid"><input class="toggle" type="checkbox" [checked]="todo.status == 1" (click)="toggleTodo(todo.id, todo.status)"></div>
+            </td>
+            <td>
+              <div class="container-fluid"><button type="button" class="btn btn-danger" (click)="removeTodo(todo.id)">DELETE</button></div>
+            </td>
       </tr>
     </table>
   </div>

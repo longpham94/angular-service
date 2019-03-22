@@ -19,7 +19,7 @@ export class TodolistService {
 
 
   getTodo(id) {
-    return this.http.request("GET", "http://127.0.0.1:3000/todo/" + id, this.httpOptions);
+    return this.http.request("GET", "http://11.11.254.57:3000/todo/" + id, this.httpOptions);
   }
 
   addTodo(todo) {
@@ -31,7 +31,7 @@ export class TodolistService {
       "name": todo.name,
       "des": todo.des
     };
-    return this.http.post("http://127.0.0.1:3000/todo/", body, this.httpOptions);
+    return this.http.post("http://11.11.254.57:3000/todo/", body, this.httpOptions);
   }
 
   toggleTodo(id,status) {
@@ -39,13 +39,13 @@ export class TodolistService {
       "id": id,
       "status": status
     };
-    return this.http.post("http://127.0.0.1:3000/todo/status", body, this.httpOptions);
+    return this.http.post("http://11.11.254.57:3000/todo/status", body, this.httpOptions);
   }
 
   removeTodo(id) {
     var body = {
       "id": id
     };
-    return this.http.post("http://127.0.0.1:3000/todo/remove", body, this.httpOptions);
+    return this.http.post("http://11.11.254.57:3000/todo/remove", body, this.httpOptions);
   }
 }
